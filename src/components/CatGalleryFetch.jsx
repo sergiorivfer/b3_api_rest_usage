@@ -45,10 +45,22 @@ export const CatGalleryFetch = () => {
 
   return (
     <div className="container mt-5">
-        <h2 className="text-center text-white mb-4"> Galeria de gatos toxoplamosos, con Fetch </h2>
-
-        <div>
-            
+        <h2 className="text-center text-white mb-4"> Galeria de gatos, con Fetch </h2>
+        {/* agregamos un contenedor y altura fija */}
+        <div className="row overflow-auto vh-80">
+            <div className="row">
+                {cats.map((cat,index) => (
+                    <div className="col-md-4 mb-4" key={index}>
+                        <div className="card h-100 d-flex flex-colums img-fluid">
+                            <img src={cat.url} className="card-img-top img-fluid object-fit-cover" alt="Cat" />
+                            <div className="card-body">
+                                <h5 className="card-title">Gatos {index + 1}</h5>
+                                <p className="card-text">un gato normal</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     </div>
   )
